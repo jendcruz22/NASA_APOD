@@ -1,0 +1,23 @@
+extends layout.pug
+
+block content
+    div.container
+      h1 JavaScript API Project
+      form#apodForm(action='/apodForm', method='POST' name='apodForm')
+        div.form-group
+          label(for='archiveDate' name='archiveDate') Date:
+          input(type='date', class="form-control", name='archiveDate')
+          button(type="submit", name="apodBtn") Submit
+      
+      hr
+
+      div.card 
+        a(href=url, targer="_blank") 
+          img.card-img-top.img-fluid(src = url alt='APOD image' )
+        p.imgDesc Click on the image to view in a separate window
+        div.card-body 
+          h2.card-title #{title}
+          p.card-text #{explanation}
+  
+  
+    
