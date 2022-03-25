@@ -10,7 +10,8 @@ block content
           button(type="submit", name="apodBtn") Submit
       
       hr
-
+      button(onclick="editItem(#{item.id})", title="Edit")
+                          |  Edit
       div.card 
         a(href=url, targer="_blank") 
           img.card-img-top.img-fluid(src = url alt='APOD image' )

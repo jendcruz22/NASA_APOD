@@ -1,3 +1,7 @@
+alert("Hi");
+
+const res = require('express/lib/response');
+
 const {Translate} = require('@google-cloud/translate').v2;
 require('dotenv').config();
 
@@ -10,32 +14,13 @@ const translate = new Translate({
     projectId: CREDENTIALS.project_id
 });
 
-// Function to detect the language of input text
-// const detectLanguage = async (text) => {
-
-//     try {
-//         let response = await translate.detect(text);
-//         return response[0].language;
-//     } catch (error) {
-//         console.log(`Error at detectLanguage --> ${error}`);
-//         return 0;
-//     }
-// }
-
-// detectLanguage('tres belle')
-//     .then((res) => {
-//         console.log(res);
-//     })
-//     .catch((err) => {
-//         console.log(error);
-//     });
-
 // Function to translate text to given language
-const translateText = async (text, targetLanguage) => {
-
+async function translateText(text, targetLanguage) {
     try {
         let [response] = await translate.translate(text, targetLanguage);
-        return response;
+        document.getElementById("demo").innerHTML = response;
+        console.log(response);
+        // return response;
     } catch (error) {
         console.log(`Error at translateText --> ${error}`);
         return 0;

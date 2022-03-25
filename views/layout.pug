@@ -2,11 +2,11 @@ html
   meta(charset='utf-8')
   meta(content="width=device-width, initial-scale=1", name="viewport")
   head
-    title NASA - APOD
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/public/css/styles.css')
-    script(src="/public/js/scripts.js")
-    
+    block head
+      title NASA - APOD
+      link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css')
+      link(rel='stylesheet', href='/public/css/styles.css')
+      script(src='../gt.js')
   body
     block content
 
