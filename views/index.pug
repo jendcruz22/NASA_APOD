@@ -3,22 +3,24 @@ extends layout.pug
 block content
     div.container
       h1 JavaScript API Project
-      form#apodForm(action='/apodForm', method='POST' name='apodForm')
+      form#apodForm(method='GET')
         div.form-group
-          label(for='archiveDate' name='archiveDate') Date:
-          input(type='date', class="form-control", name='archiveDate')
-          button(type="submit", name="apodBtn") Submit
+          label(for='archiveStartDate' name='archiveStartDate') Start Date:
+          input(type='date', class="form-control", name='archiveStartDate')
+          label(for='archiveEndDate' name='archiveEndDate') Start Date:
+          input(type='date', class="form-control", name='archiveEndDate')
+          button(type="submit") Submit
       
       hr
-      button(onclick="editItem(#{item.id})", title="Edit")
-                          |  Edit
+      
       div.card 
-        a(href=url, targer="_blank") 
-          img.card-img-top.img-fluid(src = url alt='APOD image' )
-        p.imgDesc Click on the image to view in a separate window
-        div.card-body 
-          h2.card-title #{title}
-          p.card-text #{explanation}
+        each val in displayData
+          a(href=val.url, targer="_blank") 
+            img.card-img-top.img-fluid(src = val.url alt='APOD image' )
+          p.imgDesc Click on the image to view in a separate window
+          div.card-body 
+            h2.card-title #{val.title}
+            p.card-text #{val.explanation}
   
   
     
