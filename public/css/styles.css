@@ -1,16 +1,18 @@
+/* Source-> Photo by Francesco Ungaro from Pexels: https://www.pexels.com/photo/starry-sky-998641/ */
 body {
     margin: 20px;
-    background-color: rgb(39, 38, 38);
+    background-image: url('https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
     color: rgb(255, 255, 255);
-}
-
-h1 {
     text-align: center;
 }
 
-.form-group {
-    border: 1px solid black;
+#about, .form-group {
+    border: 1px solid rgb(0, 0, 0);
     padding: 20px;
+    margin: 10px 0px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(92, 91, 91, 0.2);
+    text-align: center;
 }
 
 label {
@@ -20,10 +22,21 @@ label {
 
 .form-control {
     width:200px;
-    background-color: lightgrey;
+    position: relative;
+    display: block;
+    margin : 0 auto;
 }
 
-button {
+.btnStyle a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.btnStyle a:hover {
+    color: rgb(255, 255, 255);
+}
+
+.btnStyle {
     display: inline-block;
     padding: 0.375rem 1rem;
     font-size: 1rem;
@@ -35,23 +48,25 @@ button {
     cursor: pointer;
     margin: 10px 0px;
     background-color: lightgrey;
-    color: black;
-    border: 1px solid black;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
     border-radius: 5%;
 }
 
-button:hover {
+.btnStyle:hover {
     background-color: rgb(39, 38, 38);
-    border: 1px solid white;
-    color: white;
+    border: 1px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
 }
 
+
+
 .card {
-    border: 1px solid black;
+    border: 1px solid rgb(0, 0, 0);
     padding: 20px;
     margin: 10px 0px;
-    color: black;
-    background-color: rgba(255, 255, 255, 0.2);
+    color: rgb(255, 255, 255);
+    background-color: rgba(92, 91, 91, 0.2);
 }
 
 .card img {
