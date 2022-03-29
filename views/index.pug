@@ -5,15 +5,123 @@ block content
       h1 JavaScript API Project
       form#apodForm(method='GET')
         div.form-group
-          label(for='archiveStartDate' name='archiveStartDate') Start Date:
-          input(type='date', class="form-control", name='archiveStartDate')
-          label(for='archiveEndDate' name='archiveEndDate') End Date:
-          input(type='date', class="form-control", name='archiveEndDate')
+          label(for='archiveStartDate') Start Date:
+          input(type='date' class="form-control" name='archiveStartDate')
+          label(for='archiveEndDate') End Date:
+          input(type='date' class="form-control" name='archiveEndDate')
 
-          select(for="lang" name="lang")
-            option(value="eng" name="eng") eng
-            option(value="fr" name="fr") fr
-            option(value="hi" name="hi") hi
+          label(for='lang') Select the language to display the APOD:
+          select(for="lang" class="form-control" name="lang") 
+            option(value="eng" name="eng") English
+            option(value="af" name="af") Afrikaans	
+            option(value="sq" name="sq") Albanian
+            option(value="am" name="am") Amharic
+            option(value="ar" name="ar") Arabic
+            option(value="hy" name="hy") Armenian
+            option(value="az" name="az") Azerbaijani
+            option(value="eu" name="eu") Basque
+            option(value="be" name="be") Belarusian
+            option(value="bn" name="bn") Bengali
+            option(value="bs" name="bs") Bosnian
+            option(value="bg" name="bg") Bulgarian
+            option(value="ca" name="ca") Catalan
+            option(value="ceb" name="ceb") Cebuano
+            option(value="zh-CN" name="zh-CN") Chinese (Simplified)
+            option(value="zh-TW" name="zh-TW") Chinese (Traditional)
+            option(value="co" name="co") Corsican
+            option(value="hr" name="hr") Croatian
+            option(value="cs" name="cs") Czech
+            option(value="da" name="da") Danish
+            option(value="nl" name="nl") Dutch
+            option(value="eo" name="eo") Esperanto
+            option(value="et" name="et") Estonian
+            option(value="fi" name="fi") Finnish
+            option(value="fr" name="fr") French
+            option(value="fy" name="fy") Frisian
+            option(value="gl" name="gl") Galician
+            option(value="ka" name="ka") Georgian
+            option(value="de" name="de") German
+            option(value="el" name="el") Greek
+            option(value="gu" name="gu") Gujarati
+            option(value="ht" name="ht") Haitian Creole
+            option(value="ha" name="ha") Hausa
+            option(value="haw" name="haw") Hawaiian
+            option(value="he" name="he") Hebrew
+            option(value="hi" name="hi") Hindi
+            option(value="hmn" name="hmn") Hmong
+            option(value="hu" name="hu") Hungarian
+            option(value="is" name="is") Icelandic
+            option(value="ig" name="ig") Igbo
+            option(value="id" name="id") Indonesian
+            option(value="ga" name="ga") Irish
+            option(value="it" name="it") Italian
+            option(value="ja" name="ja") Japanese
+            option(value="jv" name="jv") Javanese
+            option(value="kn" name="kn") Kannada
+            option(value="kk" name="kk") Kazakh
+            option(value="km" name="km") Khmer
+            option(value="rw" name="rw") Kinyarwanda
+            option(value="ko" name="ko") Korean
+            option(value="ku" name="ku") Kurdish
+            option(value="ky" name="ky") Kyrgyz
+            option(value="lo" name="lo") Lao
+            option(value="lv" name="lv") Latvian
+            option(value="lt" name="lt") Lithuanian
+            option(value="lb" name="lb") Luxembourgish
+            option(value="mk" name="mk") Macedonian
+            option(value="mg" name="mg") Malagasy
+            option(value="ms" name="ms") Malay
+            option(value="ml" name="ml") Malayalam
+            option(value="mt" name="mt") Maltese
+            option(value="mi" name="mi") Maori
+            option(value="mr" name="mr") Marathi
+            option(value="mn" name="mn") Mongolian
+            option(value="my" name="my") Myanmar (Burmese)
+            option(value="ne" name="ne") Nepali
+            option(value="no" name="no") Norwegian
+            option(value="ny" name="ny") Nyanja (Chichewa)
+            option(value="or" name="or") Odia (Oriya)
+            option(value="ps" name="ps") Pashto
+            option(value="fa" name="fa") Persian
+            option(value="pl" name="pl") Polish
+            option(value="pt" name="pt") Portuguese (Portugal, Brazil)
+            option(value="pa" name="pa") Punjabi
+            option(value="ro" name="ro") Romanian
+            option(value="ru" name="ru") Russian
+            option(value="sm" name="sm") Samoan
+            option(value="gd" name="gd") Scots Gaelic
+            option(value="sr" name="sr") Serbian
+            option(value="st" name="st") Sesotho
+            option(value="sn" name="sn") Shona
+            option(value="sd" name="sd") Sindhi
+            option(value="si" name="si") Sinhala (Sinhalese)
+            option(value="sk" name="sk") Slovak
+            option(value="sl" name="sl") Slovenian
+            option(value="so" name="so") Somali
+            option(value="es" name="es") Spanish
+            option(value="su" name="su") Sundanese
+            option(value="sw" name="sw") Swahili
+            option(value="sv" name="sv") Swedish
+            option(value="tl" name="tl") Tagalog (Filipino)
+            option(value="tg" name="tg") Tajik
+            option(value="ta" name="ta") Tamil
+            option(value="tt" name="tt") Tatar
+            option(value="te" name="te") Telugu
+            option(value="th" name="th") Thai
+            option(value="tr" name="tr") Turkish
+            option(value="tk" name="tk") Turkmen
+            option(value="uk" name="uk") Ukrainian
+            option(value="ur" name="ur") Urdu
+            option(value="ug" name="ug") Uyghur
+            option(value="uz" name="uz") Uzbek
+            option(value="vi" name="vi") Vietnamese
+            option(value="cy" name="cy") Welsh
+            option(value="xh" name="xh") Xhosa
+            option(value="yi" name="yi") Yiddish
+            option(value="yo" name="yo") Yoruba
+            option(value="zu" name="zu") Zulu
+      
+
           button(type="submit") Submit
       
       hr
