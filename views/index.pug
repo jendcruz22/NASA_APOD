@@ -7,14 +7,14 @@ block content
         div.form-group
           label(for='archiveStartDate' name='archiveStartDate') Start Date:
           input(type='date', class="form-control", name='archiveStartDate')
-          label(for='archiveEndDate' name='archiveEndDate') Start Date:
+          label(for='archiveEndDate' name='archiveEndDate') End Date:
           input(type='date', class="form-control", name='archiveEndDate')
           button(type="submit") Submit
       
       hr
       
-      div.card 
-        each val in displayData
+      each val in both.fr
+        div.card 
           a(href=val.url, targer="_blank") 
             img.card-img-top.img-fluid(src = val.url alt='APOD image' )
           p.imgDesc Click on the image to view in a separate window
