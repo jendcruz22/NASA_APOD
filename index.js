@@ -49,25 +49,24 @@ app.listen(port, () => {
 
 app.get("/", (req, res) => {
   let startDate, endDate;
+  let lang = req.query.lang;
   // IF USER HAS PROVIDED START AND END DATE, ASSIGN THEM TO START AND END DATE VARIABLES
   if (req.query.archiveEndDate) {
     if (req.query.archiveStartDate) {
       startDate = req.query.archiveStartDate;
-      endDate = req.query.archiveEndDate;let url = "https://api.nasa.gov/planetary/apod?api_key=" + key + "&start_date=" + startDate + "&end_date=" +endDate;
-      multipleDays(res, url); 
+      endDate = req.query.archiveEndDate;
     }
   } 
   // ELSE ASSIGN TODAY'S DATE AS START AND END DATE
   else {
-    // startDate = new Date().toISOString().slice(0, 10);
-    // endDate = new Date().toISOString().slice(0, 10);
-    let url = "https://api.nasa.gov/planetary/apod?api_key=" + key;
-    multipleDays(res, url);
+    startDate = new Date().toISOString().slice(0, 10);
+    endDate = new Date().toISOString().slice(0, 10);
   }
-  
+  let url = "https://api.nasa.gov/planetary/apod?api_key=" + key + "&start_date=" + startDate + "&end_date=" +endDate;
+  multipleDays(res, url, lang);
 });
 
-async function multipleDays(res, url) {
+async function multipleDays(res, url, lang) {
   var pageData = {
     title: "NASA APOD API",
   };
@@ -82,26 +81,26 @@ async function multipleDays(res, url) {
     for (var val of response.data){
       displayData.push(val);
     }
-    var frTitle, frExplanation;
-    var frDisplayData=[];
-    var both = {eng:displayData, fr:[]};
+    var olTitle, olExplanation;
+    var olDisplayData=[];
+    var both = {eng:displayData, ol:[]};
     // console.log(displayData);
     displayData.forEach(function (item) {
       // You must call .then on the promise to capture the results regardless of the promise state (resolved or still pending)
-      translateText(item.explanation, 'fr').then(function(result) {
-        frExplanation = result;
-        frTitle = translateText(item.title, 'fr').then(function(result) {
-          frTitle = result;
-          frDisplayData = {
+      translateText(item.explanation, lang).then(function(result) {
+        olExplanation = result;
+        olTitle = translateText(item.title, lang).then(function(result) {
+          olTitle = result;
+          olDisplayData = {
               date: item.date,
-              explanation: frExplanation,
+              explanation: olExplanation,
               hdurl: item.hdurl,
               media_type: item.media_type,
               service_version: item.service_version,
-              title: frTitle,
+              title: olTitle,
               url: item.url
             };
-          both.fr.push(frDisplayData);
+          both.ol.push(olDisplayData);
           return(both);
         })
       });

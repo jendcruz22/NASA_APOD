@@ -9,11 +9,16 @@ block content
           input(type='date', class="form-control", name='archiveStartDate')
           label(for='archiveEndDate' name='archiveEndDate') End Date:
           input(type='date', class="form-control", name='archiveEndDate')
+
+          select(for="lang" name="lang")
+            option(value="eng" name="eng") eng
+            option(value="fr" name="fr") fr
+            option(value="hi" name="hi") hi
           button(type="submit") Submit
       
       hr
       
-      each val in both.fr
+      each val in both.ol
         div.card 
           a(href=val.url, targer="_blank") 
             img.card-img-top.img-fluid(src = val.url alt='APOD image' )
